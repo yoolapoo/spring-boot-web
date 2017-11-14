@@ -21,8 +21,11 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
                     <ul class="nav navbar-nav">
-                        <li><a href="#" th:href="@{/products}">Products</a></li>
-                        <li><a href="#" th:href="@{/product/new}">Create Product</a></li>
+                        <li><a href="#" th:href="@{music/musics}">Musics</a></li>
+                        <li><a href="#" th:href="@{movie/movies}">Movies</a></li>
+                        <li><a href="#" th:href="@{tvshow/tvshows}">Tv Shows</a></li>
+
+                        <!--<li><a href="#" th:href="@{/music/new}">Create Music</a></li>-->
                     </ul>
 
                 </div>
@@ -32,14 +35,17 @@
         <div class="jumbotron">
             <div class="row text-center">
                 <div class="">
-                    <h2>Spring Framework Guru</h2>
+                    <h2>Mediatheque</h2>
 
-                    <h3>Spring Boot Web App</h3>
+
+
                 </div>
             </div>
             <div class="row text-center">
-                <img src="../../static/images/NewBannerBOOTS_2.png" width="400"
-                     th:src="@{/images/NewBannerBOOTS_2.png}"/>
+                <img src="../../static/images/homepage.jpg" width="400"
+                     th:src="@{/images/homepage.jpg}"/>
+                <h3><i>by Darcy Guillaume, Begarin Nicolas ....</i></h3>
+                <h3><i>... Cattez William, Tierrie Pierre-Henri</i></h3>
             </div>
         </div>
     </div>

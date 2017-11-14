@@ -1,7 +1,6 @@
 package guru.springframework.repositories;
 
 import guru.springframework.configuration.RepositoryConfiguration;
-import guru.springframework.domain.Product;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,19 +13,19 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = {RepositoryConfiguration.class})
-public class ProductRepositoryTest {
+public class MusicRepositoryTest {
 
-    private ProductRepository productRepository;
+    private MusicRepository musicRepository;
 
     @Autowired
-    public void setProductRepository(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public void setMusicRepository(MusicRepository musicRepository) {
+        this.musicRepository = musicRepository;
     }
 
     @Test
-    public void testSaveProduct(){
+    public void testSaveMusic(){
         //setup product
-        Product product = new Product();
+/*        Music product = new Product();
         product.setDescription("Spring Framework Guru Shirt");
         product.setPrice(new BigDecimal("18.95"));
         product.setProductId("1234");
@@ -67,5 +66,6 @@ public class ProductRepositoryTest {
         }
 
         assertEquals(count, 1);
+        */
     }
 }
