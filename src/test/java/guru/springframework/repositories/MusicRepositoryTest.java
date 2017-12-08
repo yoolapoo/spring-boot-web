@@ -1,6 +1,10 @@
 package guru.springframework.repositories;
 
+import guru.springframework.bootstrap.MusicLoader;
 import guru.springframework.configuration.RepositoryConfiguration;
+import guru.springframework.domain.Media;
+import guru.springframework.services.MediaService;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -15,11 +20,14 @@ import static org.junit.Assert.*;
 @SpringBootTest(classes = {RepositoryConfiguration.class})
 public class MusicRepositoryTest {
 
-    private MusicRepository musicRepository;
-
     @Autowired
-    public void setMusicRepository(MusicRepository musicRepository) {
-        this.musicRepository = musicRepository;
+    private MediaService mediaService;
+
+    private Logger log = Logger.getLogger(MusicLoader.class);
+
+    public MusicRepositoryTest(MediaService mediaService) {
+        super();
+        this.mediaService = mediaService;
     }
 
     @Test
@@ -28,8 +36,12 @@ public class MusicRepositoryTest {
 /*        Music product = new Product();
         product.setDescription("Spring Framework Guru Shirt");
         product.setPrice(new BigDecimal("18.95"));
-        product.setProductId("1234");
+        product.setProductId("1234");*/
 
+                List<Media> movies = mediaService.findAll("movie");
+
+
+/*
         //save product, verify has ID value after save
         assertNull(product.getId()); //null before save
         productRepository.save(product);
